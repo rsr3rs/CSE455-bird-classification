@@ -44,7 +44,9 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
 3. By looking at some of the instances where the model is confused, it does seem like some of them are either
    from a class where there are relatively few training examples, or where the bird photoed is in a weird
    position. It can be concluded that the model still has a reasonable performance.
-   ![Example 1](sample_bird1.jpg = 250x)![Example 2](sample_bird2.jpg = 250x)![Example 3](sample_bird3.jpg = 250x)
+   <img src="sample_bird1.jpg" alt="Example 1" width="250" />
+   <img src="sample_bird2.jpg" alt="Example 2" width="250" />
+   <img src="sample_bird3.jpg" alt="Example 3" width="250" />
 
 ## Some problem we encountered
 1. Like stated above, Google Colab disallows us to train continuously for more than 12 hours, so the training process was run a
