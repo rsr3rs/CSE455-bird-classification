@@ -44,6 +44,8 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
 3. By looking at some of the instances where the model is confused, it does seem like some of them are either
    from a class where there are relatively few training examples, or where the bird photoed is in a weird
    position. It can be concluded that the model still has a reasonable performance.
+   
+
    <img src="sample_bird1.jpg" alt="Example 1" width="250" />
    <img src="sample_bird2.jpg" alt="Example 2" width="250" />
    <img src="sample_bird3.jpg" alt="Example 3" width="250" />
