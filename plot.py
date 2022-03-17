@@ -12,6 +12,9 @@ for l in f:
     if len(component) < 4:
         continue
     epoch = int(component[0])
+    if epoch < 23:
+        continue
+    epoch -= 23
     is_train = component[1] == 'train'
     loss = float(component[-2])
     acc = float(component[-1])
