@@ -129,6 +129,16 @@ dmypy.json
 .pyre/
 
 .idea
-birds/
 birds.zip
 model/
+birds/
+#!birds/train/104/0a80c3e40f28488594e006b1239e4c98.jpg
+#!birds/train/10/09f9cff4f17941a3a57cbae3ed1b40c4.jpg
+#!birds/train/104/eca1dab7c8ae4bd4a9deb4c7e97badc9.jpg
+#!birds/train/103/9f46418e56bf48f994b9c52c1040146f.jpg
+#!birds/train/100/db0dd7d527bc4dbdae35cfdac704da07.jpg
+#!birds/train/101/7ef2ecd2f49b446abc63a3fef9342fc4.jpg
+#!birds/train/0/9592f862d14c4af889cba87e7ebb98fb.jpg
+#!birds/train/10/7e22f6b816a5404881a8a55d112602b9.jpg
+#!birds/train/100/52fcb165ed1842dcbec793222f78ce9c.jpg
+#!birds/train/10/d90fa7bdb2b943e98180296c582c4dfa.jpg
