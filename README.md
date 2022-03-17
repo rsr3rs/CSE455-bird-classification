@@ -5,6 +5,7 @@ Robin Yang, Jack Zhang
 
 ## Problem description
 For our project, we decided to go with the recommended bird classification. The task is to identify the species of a bird from its image.
+We also have a [video](https://drive.google.com/file/d/10yLrDJjzY493yPwQlqqI5LIGVqSXno1j/view?usp=sharing) describing it
 
 ## Dataset and Technologies used
 Our dataset is from [kaggle](https://www.kaggle.com/c/birds-22wi/data). The dataset contained more than 500 birds species to classify, with over 20k of images of training data.
