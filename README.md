@@ -60,4 +60,7 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
    getting a low accuracy after loading a saved model. Because of these issues, the first 22 epochs were discarded, and
    we retrained from the start.
    
+## Potential improvement
+Use better models - probably more recent ones, and spend more time training.
+   
 [^1]: Measured by how close the prediction is to the average vector.
