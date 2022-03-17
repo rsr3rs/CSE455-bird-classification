@@ -22,7 +22,10 @@ and it has good performance.
 We used cross entropy as the final loss metric for our model, as it fits well for a classification task. For our optimizer, we used stochastic gradient descent with a batch size of 16. We chose an initial learning rate of $5e-2$, and used a scheduler to decrease it exponentially every 7 epochs. The dataset didn't come with any testing labels, so we divided our dataset into training and validation sets for evaluating the model mid-training. We trained our model on [Google Colab](https://colab.research.google.com/) using their GPUs. Unfortunately, the training time exceeded the personal use limit for Google Colab, so we saved our model checkpoints and trained on several accounts. We trained for a total of around 4 days, and trained for over 80 epochs in total.
 
 ## Training Result and Model Evaluation
-1. Here we provide our loss vs. epoch and model accuracy vs epoch graphs. We see that
+1. Here we provide our loss vs. epoch and model accuracy vs epoch graphs.
+   ![Epochs vs Accuracy](acc.png)
+   ![Epochs vs Loss](loss.png)
+   We see that
    although the model plateau in training, the exponentially decreasing learning rate helps
    with model convergence. At the end, we've trained for more than 20 epochs with varying learning
    rate, but our test accuracy sees little improvement. This tells us that with our model and our
@@ -38,18 +41,16 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
    could both attribute to the overfitting of the model (not enough variance in the data) and to the model's relativly
    poor performance.
     
-3. By looking at some of the instances where the model is confused, it does seem like they are either
+3. By looking at some of the instances where the model is confused, it does seem like some of them are either
    from a class where there are relatively few training examples, or where the bird photoed is in a weird
    position. It can be concluded that the model still has a reasonable performance.
+   ![Example 1](sample_bird1.jpg = 250x)![Example 2](sample_bird2.jpg = 250x)![Example 3](sample_bird3.jpg = 250x)
 
-[(480.6448009985342, ('birds\\train\\104\\0a80c3e40f28488594e006b1239e4c98.jpg', 7)), (483.8476572563861, ('birds\\train\\10\\09f9cff4f17941a3a57cbae3ed1b40c4.jpg', 2)), (486.74139814776186, ('birds\\train\\104\\eca1dab7c8ae4bd4a9deb4c7e97badc9.jpg', 7)), (491.7008424652224, ('birds\\train\\103\\9f46418e56bf48f994b9c52c1040146f.jpg', 6)), (501.6957079725642, ('birds\\train\\100\\db0dd7d527bc4dbdae35cfdac704da07.jpg', 3)), (502.6622481475987, ('birds\\train\\101\\7ef2ecd2f49b446abc63a3fef9342fc4.jpg', 4)), (504.9991980599829, ('birds\\train\\0\\9592f862d14c4af889cba87e7ebb98fb.jpg', 0)), (507.32921363529994, ('birds\\train\\10\\7e22f6b816a5404881a8a55d112602b9.jpg', 2)), (512.0188401928251, ('birds\\train\\100\\52fcb165ed1842dcbec793222f78ce9c.jpg', 3)), (517.4625781403498, ('birds\\train\\10\\d90fa7bdb2b943e98180296c582c4dfa.jpg', 2))]
-
-4. Maybe visualize some of the layers? Might be too much work. 
-
-## Some problems
-Google Colab disallows us to train continuously, so the training process was run a
-few times. Dataset was split randomly so each time we get a different train and test dataset.
-We then fixed the issue using a fixed random seed. Another problem was that we were
-not saving optimizer and scheduler initially, but we realized the problem after
-getting a low accuracy after loading a saved model. Because of the issues, the first
-22 epochs were discarded.
+## Some problem we encountered
+1. Like stated above, Google Colab disallows us to train continuously for more than 12 hours, so the training process was run a
+   few times. Dataset was split randomly so each time we get a different train and test dataset.
+   We then fixed the issue using a fixed random seed. 
+   
+2. Another problem was that we were not saving optimizer and scheduler initially, but we realized the problem after
+   getting a low accuracy after loading a saved model. Because of these issues, the first 22 epochs were discarded, and
+   we retrained from the start.
