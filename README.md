@@ -44,7 +44,7 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
 3. By looking at some of the instances where the model is confused, it does seem like some of them are either
    from a class where there are relatively few training examples, or where the bird photoed is in a weird
    position. It can be concluded that the model still has a reasonable performance.
-   
+   Here are some of the examples which confused[^1] our model the most:
 
    <img src="sample_bird1.jpg" alt="Example 1" width="250" />
    <img src="sample_bird2.jpg" alt="Example 2" width="250" />
@@ -58,3 +58,5 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
 2. Another problem was that we were not saving optimizer and scheduler initially, but we realized the problem after
    getting a low accuracy after loading a saved model. Because of these issues, the first 22 epochs were discarded, and
    we retrained from the start.
+   
+[^1]: Measured by how close the prediction is to the average vector.
