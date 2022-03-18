@@ -51,7 +51,8 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
    <img src="sample_bird2.jpg" alt="Example 2" width="250" />
    <img src="sample_bird3.jpg" alt="Example 3" width="250" />
 
-## Some problem we encountered
+## Discussion
+### Some problem we encountered
 1. Like stated above, Google Colab disallows us to train continuously for more than 12 hours, so the training process was run a
    few times. Dataset was split randomly so each time we get a different train and test dataset.
    We then fixed the issue using a fixed random seed. 
@@ -60,7 +61,11 @@ We used cross entropy as the final loss metric for our model, as it fits well fo
    getting a low accuracy after loading a saved model. Because of these issues, the first 22 epochs were discarded, and
    we retrained from the start.
    
-## Potential improvement
-Use better models - probably more recent ones, and spend more time training.
+### Potential improvement
+The model we used have flattened out by the end of the training, and still had a gap between training and testing performance. Thus, a potential improvement
+to the model is to use some techniques to reduce overfitting. This could include L1-normalization, better data augmentation, or even random dropouts. Additionally, if we had more training time, we hope to experiment more with the hyper-parameters.
+
+### Previous works
+The model was taken from the ResNet paper linked above, and we used code from the PyTorch tutorial transfer learning page. From our search, compared to other bird prediction networks, our model has a bigger scope and fewer training data to work with per class. Thus we had to make a lot of augmentations to our data, which in turned had made it more robust on unseen examples.
    
 [^1]: Measured by how close the prediction is to the average vector.
